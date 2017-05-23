@@ -26,8 +26,8 @@ describe('connexa.io Create Event page', function() {
         CreateEventPage.open();
         CreateEventPage.setRequiredFields(eventName,shortDescription,date,date,startHour,endHour);
   
-		    //Save Event
-		    CreateEventPage.save();
+		//Save Event
+		CreateEventPage.save(false);
         
         //Comparing the Input User Data with the Event Data Saved 
         EventSettingsPage.open();

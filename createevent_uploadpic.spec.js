@@ -31,11 +31,10 @@ describe('connexa.io Create Event page', function() {
         CreateEventPage.uploadCover();                 
 
 		//Save Event
-		CreateEventPage.save();
+		CreateEventPage.save(true);
         
-        assert.equal('1','1');
         //Comparing the Input User Data with the Event Data Saved 
-        /*
+        
         EventSettingsPage.open();
 
         assert.equal(eventName, EventSettingsPage.getEventName());
@@ -44,6 +43,6 @@ describe('connexa.io Create Event page', function() {
         assert.equal(date, EventSettingsPage.getEndDate());
         assert.equal(startHour, EventSettingsPage.getStartHour());
         assert.equal(endHour, EventSettingsPage.getEndHour());
-        */
+        
     });
 });

@@ -69,8 +69,21 @@ var CreateEventPage = Object.create(Page, {
      
     } },
 
-    save: { value: function() {
+    waitCover: { value: function() {                    //PRIVATE METHOD
         
+        browser.waitUntil(function() {
+            var src = browser.getAttribute('#js-cover-url', 'src');
+            //console.log(src);
+            return src != '';
+        },msTimeout,'expected src to be different after msTimeout');
+             
+    } },
+
+    save: { value: function(hasCover) {
+        
+        if (hasCover)
+            this.waitCover();
+               
         this.saveButton.waitForEnabled(msTimeout);   
         this.saveButton.waitForVisible(msTimeout);    
         this.saveButton.click();
