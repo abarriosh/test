@@ -22,14 +22,41 @@ var LandingPage = Object.create(Page, {
         
     } },
 
+    openPrivate: { value: function() {
+        Page.openPrivate.call(this, '');
+        
+    } },
+
+    openNewCommunity: { value: function(domain,path) {
+        Page.openNewCommunity.call(this,domain,path);
+        
+    } },
+
     loginAdmin: { value: function() {
         this.email.waitForEnabled();
+        this.password.waitForEnabled();
+        this.signInButton.waitForEnabled();
+        this.registerEmail.waitForEnabled();//Guarantee that the fields and button are loaded
+
         this.email.setValue('andres@connexa.io');
         this.password.setValue('hp692cie');
         this.signInButton.click();
                         
     } },
     
+    login: { value: function(email,password) {
+        this.email.waitForEnabled();
+        this.password.waitForEnabled();
+        this.signInButton.waitForEnabled();
+        this.registerEmail.waitForEnabled();//Guarantee that the fields and button are loaded
+
+        this.email.setValue(email);
+        this.password.setValue(password);
+        this.signInButton.click();
+                        
+    } },
+
+
     registerByEmail: { value: function(name) {
       
         this.registerEmail.waitForEnabled();

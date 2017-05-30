@@ -4,7 +4,7 @@
 */
 
 var assert = require('assert');
-var PrivateLandingPage = require('../pageobjects/landing/private_landing.page');
+var LandingPage = require('../pageobjects/landing/landing.page');
 var OnboardingUserPage = require('../pageobjects/landing/onboarding_user.page');
 var WaitingApprovalPage = require('../pageobjects/landing/waiting_approval.page');
 var ProfileSettingsPage = require('../pageobjects/profile/profile_settings.page');
@@ -26,8 +26,8 @@ describe('connexa.io Register User by Email in Private Community', function() {
         
             
         //Register by Email
-	    PrivateLandingPage.open();
-        PrivateLadingPage.registerByEmail(userFirstName); 
+	    LandingPage.openPrivate();
+        LandingPage.registerByEmail(userFirstName); 
        
     	//Onboarding User Process
     	OnboardingUserPage.setRequiredFields(userFirstName,userLastName,userCountry,userCity);
@@ -40,7 +40,7 @@ describe('connexa.io Register User by Email in Private Community', function() {
         LandingPage.loginAdmin();
        
         //Search the User Created 
-        GlobalSearchPage.search(userFirstName+' '+userLastName);        
+        GlobalSearchPage.search(userFirstName+' '+userLastName,'private');        
          
         //Comparing the Input User Data with the Profile Data Saved 
         ProfileSettingsPage.open();

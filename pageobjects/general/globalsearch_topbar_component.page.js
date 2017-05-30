@@ -13,18 +13,27 @@ var GlobalSearchPage = Object.create(Page, {
      * define or overwrite page methods
      */
      
-    search: { value: function(criteria) {   
+    search: { value: function(criteria,access) {   
            
         
         this.globalSearch.waitForVisible(msTimeout);
         this.globalSearch.setValue(criteria);
-        this.globalSearch.submitForm();         
+        //this.globalSearch.submitForm();         
         
         browser.waitForText('='+criteria,msTimeout);
         var href = browser.getAttribute('='+criteria, 'href');
         
-        Page.open.call(this, href);
+        var caps = browser.session();
+        if (caps.value.browserName !== 'phantomjs')  //REAL BROWSER CREATES AN ARRAY ON HREF ATTRIBUTE
+            href = href[1];    
+        
+        href = href.substring(42);
+        console.log(href);
 
+        if (access === 'public')
+            Page.open.call(this, href);
+        else
+            Page.openPrivate.call(this,href);
         
     } }, 
 

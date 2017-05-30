@@ -63,6 +63,32 @@ var OnboardingUserPage = Object.create(Page, {
      
     } },
 
+    setCommunityAdminFields: { value: function(lastName,city) {
+        
+        this.lastName.waitForEnabled(msTimeout);
+        this.lastName.setValue(lastName);
+        this.enableCity();
+        this.createCityOption();
+        this.city.selectByValue(city);                
+     
+    } },
+
+
+    getFirstName: { value: function() {
+       
+       this.firstName.waitForVisible(msTimeout);
+       return this.firstName.getValue();
+                
+    } },
+
+    getCountry: { value: function() {
+       
+       this.countryNameSpan.waitForVisible(msTimeout); //Wait span visibility containing the country name
+       return this.country.getValue();
+                       
+    } },
+
+
     continue: { value: function() {
         this.continueButton.click();
    
