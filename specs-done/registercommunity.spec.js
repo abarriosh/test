@@ -17,7 +17,6 @@ describe('connexa.io Register Community', function() {
     it('should have the registered data - the fancy generator way', function () {
       
         var randomNumber = utils.randomNumber().value;
-        console.log(randomNumber);
         const email = 'testing' + randomNumber +'@connexa.io';
         const password = 'testing123';
         const name = 'Jhon';
@@ -29,7 +28,8 @@ describe('connexa.io Register Community', function() {
         const nextYearMembers = '1000';  //HubSpot Data - No Assert
         const communityName = 'Con_Test_'+ randomNumber;
         const domainName = 'contest'+ randomNumber;
-        
+        console.log(communityName);
+
         browser.setViewportSize({width: 1366,height: 657}); //Expand the complete viewport For Headless Execution
             
         //Step 1

@@ -16,7 +16,7 @@ describe('connexa.io Register User by Email in Private Community', function() {
     it('should have the registered data - the fancy generator way', function () {
       
         var userFirstName = 'TestUser' + utils.randomNumber().value;
-        console.log(userFirstName);
+        console.log('Private' + userFirstName);
 
         const userLastName = 'Test';
         const userCountry = 'VE'; 
@@ -37,6 +37,7 @@ describe('connexa.io Register User by Email in Private Community', function() {
         WaitingApprovalPage.signOut();
 
         //Login as Admin
+        LandingPage.openPrivate();
         LandingPage.loginAdmin();
        
         //Search the User Created 

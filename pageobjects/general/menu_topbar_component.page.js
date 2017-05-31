@@ -10,8 +10,10 @@ var MenuTopBarPage = Object.create(Page, {
      settingsButton: { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[2]/div/div/div/nav/ul/li[3]/a'); } },
      profileOption: { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[2]/div/div/div/nav/ul/li[3]/ul/li[1]/a'); } },
      adminOption: { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[2]/div/div/div/nav/ul/li[3]/ul/li[4]/a'); } },
+     signOutOption: { get: function () { return browser.element('#js-signout'); } },
 
-    /**
+
+     /**
      * define or overwrite page methods
      */
        
@@ -47,6 +49,16 @@ var MenuTopBarPage = Object.create(Page, {
         //Click over Admin Option    
         this.adminOption.waitForVisible(msTimeout);
         this.adminOption.click();
+        
+    } },
+
+    clickSignOutOption: { value: function() {     //PUBLIC METHOD
+        
+        this.clickSettingsButton();
+        
+        //Click over Sign Out Option    
+        this.signOutOption.waitForVisible(msTimeout);
+        this.signOutOption.click();
         
     } }
 
