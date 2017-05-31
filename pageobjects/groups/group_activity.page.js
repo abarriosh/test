@@ -1,6 +1,6 @@
 // group_activity.page.js
 var Page = require('../page');
-var PostPage = require('../pageobjects/general/post_component.page');
+var PostPage = require('../general/post_component.page');
 
 const msTimeout = 30000;
 

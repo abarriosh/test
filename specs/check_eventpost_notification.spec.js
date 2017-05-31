@@ -14,12 +14,14 @@ var LandingPage = require('../pageobjects/landing/landing.page');
 var EventActivityPage = require('../pageobjects/events/event_activity.page');
 var MenuTopBarPage = require('../pageobjects/general/menu_topbar_component.page');
 var NotificationsTopBarPage = require('../pageobjects/general/notifications_topbar_component.page');
+var GlobalSearchPage = require('../pageobjects/general/globalsearch_topbar_component.page');
 
 describe('connexa.io Check the Notification after an Event Post', function() {
     it('should have the right title - the fancy generator way', function () {
         
         const eventName = 'TestEvent for Automated Tests';
-        console.log(eventName);
+        const postMessage = 'Automated Testing Event Notification Post...';
+        console.log(postMessage);
 
         browser.setViewportSize({width: 1366,height: 657}); //Needed to Expand the viewport (For Headless Execution)
 
@@ -31,8 +33,8 @@ describe('connexa.io Check the Notification after an Event Post', function() {
         GlobalSearchPage.search(eventName,'public');
         
         //Make an Event Post
-        EventActivityEvent.createPost('Automatic Testing Post...')
-       
+        EventActivityEvent.createPost(postMessage);
+        
         //LogOut the User that makes the post
         MenuTopBarPage.clickSignOutOption();
 
@@ -41,7 +43,7 @@ describe('connexa.io Check the Notification after an Event Post', function() {
         LandingPage.login('andres@connexa.io','hp692cie');
 
         //Search the Notification to make the assert
-        assert.equal(true, NotificationsTopBarPage.isPostNotificationFound(eventName);
+        assert.equal(true, NotificationsTopBarPage.isPostNotificationFound(eventName));
 
     });
 });

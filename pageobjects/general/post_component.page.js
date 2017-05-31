@@ -18,7 +18,7 @@ var PostPage = Object.create(Page, {
            
         this.post.waitForVisible(msTimeout);
         this.post.setValue(post);       
-    } }
+    } },
 
 
     submit: { value: function() {   
