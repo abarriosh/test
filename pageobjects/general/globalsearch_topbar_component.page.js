@@ -18,22 +18,27 @@ var GlobalSearchPage = Object.create(Page, {
         
         this.globalSearch.waitForVisible(msTimeout);
         this.globalSearch.setValue(criteria);
-        //this.globalSearch.submitForm();         
+        
         
         browser.waitForText('='+criteria,msTimeout);
         var href = browser.getAttribute('='+criteria, 'href');
         
         var caps = browser.session();
-        if (caps.value.browserName !== 'phantomjs')  //REAL BROWSER CREATES AN ARRAY ON HREF ATTRIBUTE
-            href = href[1];    
+        if (caps.value.browserName !== 'phantomjs')  //REAL BROWSER CREATES AN ARRAY ON HREF ATTRIBUTE. WE NEED TO SEARCH THE LAST ELEMENT OF THE ARRAY
+            href = href[href.length-1];    
         
-        href = href.substring(42);
-        console.log(href);
-
-        if (access === 'public')
+        
+        console.log('href without substring: '+href);
+        
+        if (access === 'public'){
+            href = href.substring(35);      //SUBSTRING IS TOTALLY DEPENDING OF THE PUBLIC DOMAIN
             Page.open.call(this, href);
-        else
+        }else{
+            href = href.substring(42);      //SUBSTRING IS TOTALLY DEPENDING OF THE PRIVATE DOMAINE
             Page.openPrivate.call(this,href);
+        }
+
+        console.log(href);
         
     } }, 
 

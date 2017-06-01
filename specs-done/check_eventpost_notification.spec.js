@@ -15,25 +15,27 @@ var EventActivityPage = require('../pageobjects/events/event_activity.page');
 var MenuTopBarPage = require('../pageobjects/general/menu_topbar_component.page');
 var NotificationsTopBarPage = require('../pageobjects/general/notifications_topbar_component.page');
 var GlobalSearchPage = require('../pageobjects/general/globalsearch_topbar_component.page');
+var utils = require('../assets/utils.js').Utils;
 
 describe('connexa.io Check the Notification after an Event Post', function() {
     it('should have the right title - the fancy generator way', function () {
         
         const eventName = 'TestEvent for Automated Tests';
-        const postMessage = 'Automated Testing Event Notification Post...';
-        console.log(postMessage);
+        const post = 'Event Post '+ utils.randomNumber().value;
+        console.log(post);
 
         browser.setViewportSize({width: 1366,height: 657}); //Needed to Expand the viewport (For Headless Execution)
 
       	//User Sign In to make a post 
        	LandingPage.open();
-        LandingPage.login('abarrioh@gmail.com','hp692cie');
+        LandingPage.login('abarriosh@gmail.com','hp692cie');
 
         //Search the Event
         GlobalSearchPage.search(eventName,'public');
         
         //Make an Event Post
-        EventActivityEvent.createPost(postMessage);
+        EventActivityPage.createPost(post);
+        EventActivityPage.waitForPost(post)
         
         //LogOut the User that makes the post
         MenuTopBarPage.clickSignOutOption();

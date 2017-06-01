@@ -25,7 +25,19 @@ var PostPage = Object.create(Page, {
            
         this.postButton.waitForVisible(msTimeout);
         this.postButton.click();       
-    } }   
+    } },
+
+    waitPost: { value: function(post) {                    
+        
+        
+        browser.waitUntil(function() {
+            
+            browser.waitForText('p='+post,msTimeout);
+            return true;
+
+        },msTimeout,'expected post created after msTimeout');
+             
+    } }, 
           
 
 });

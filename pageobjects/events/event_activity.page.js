@@ -14,11 +14,19 @@ var EventActivityPage = Object.create(Page, {
      * define or overwrite page methods
      */
     createPost: { value: function(post) {
-        
+
         PostPage.setPost(post);
-        PostpPage.submit();
+        PostPage.submit();
+               
+    } },
+
+    waitForPost: { value: function(post) {
+
+        PostPage.waitPost(post);
+        
                
     } }
+
              
 
 });

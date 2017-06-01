@@ -11,7 +11,7 @@ var MenuTopBarPage = Object.create(Page, {
      profileOption: { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[2]/div/div/div/nav/ul/li[3]/ul/li[1]/a'); } },
      adminOption: { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[2]/div/div/div/nav/ul/li[3]/ul/li[4]/a'); } },
      signOutOption: { get: function () { return browser.element('#js-signout'); } },
-
+     //signOutOptionNoAdmin: { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[2]/div/div/div/nav/ul/li[3]/ul/li[4]/a'); } }, 
 
      /**
      * define or overwrite page methods
