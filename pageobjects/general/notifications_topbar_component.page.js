@@ -23,7 +23,7 @@ var NotificationsTopBarPage = Object.create(Page, {
         if (caps.value.browserName === 'phantomjs')
             this.notificationsButton.moveToObject();    // HEADLESS
         else
-            this.notificationsButton.click();           // REAL BROWSER AS FIREFOX 
+            this.notificationsButton.click();           // REAL BROWSER AS FIREFOX .... IT MUST BE CHANGE TO MOVE OBJECT BECAUSE THE CLICK DISPLAY THE COMPLETE PAGE
         
            
     } },

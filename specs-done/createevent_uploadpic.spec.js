@@ -1,3 +1,8 @@
+/* Preconditions:
+
+    Must be execute in real browser
+
+*/
 
 var assert = require('assert');
 var LandingPage = require('../pageobjects/landing/landing.page');
@@ -7,7 +12,7 @@ var utils = require('../assets/utils.js').Utils;
 const msTimeout = 30000;
 
 describe('connexa.io Create Event page', function() {
-    it('should have the right title - the fancy generator way', function () {
+    it('should save and verify the event require fields with a cover', function () {
         
         var eventName = 'TestEvent' + utils.randomNumber().value;
         console.log(eventName);
@@ -17,7 +22,7 @@ describe('connexa.io Create Event page', function() {
         var startHour = utils.generateHour(0).value;
         var endHour = utils.generateHour(5).value;
 
-        browser.setViewportSize({width: 1366,height: 657}); //Needed to Expand the viewport beyond the Global Search (For Headless Execution)
+        //browser.setViewportSize({width: 1366,height: 657}); //Needed to Expand the viewport beyond the Global Search (For Headless Execution)
 
       	//Sign In
       	LandingPage.open();

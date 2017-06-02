@@ -7,8 +7,12 @@
 
    If any data is changed (event name or users) it should be change in the test variables. 
 
+   USE ONLY HEADLESS, BECAUSE THE ASSERT IS WITH THE SMALL NOTIFICATIONS WINDOW.
+   CURRENTLY THERE ARE SOME PROBLEMS WIH REAL BROWSERS AND WEBDRIVER.IO MOVETO() METHOD.
+   THE TEST DO A CLICK THAT SHOWS THE COMPLETE NOTIFICATIONS PAGE, IN THAT CASE A CORRECT ASSERT MUST LOOKUP EACH NOTIFICACION, CLICKS
+   OVER THE EVENT AND COMPARE THE RANDOM POST. IN TERMS OF PERFORMANCE, IT IS BETTER FIND THE WAY THAT MOVETO() METHOD
+   WORKS ON REAL BROWSERS.. 
 */
-
 var assert = require('assert');
 var LandingPage = require('../pageobjects/landing/landing.page');
 var EventActivityPage = require('../pageobjects/events/event_activity.page');
@@ -18,7 +22,7 @@ var GlobalSearchPage = require('../pageobjects/general/globalsearch_topbar_compo
 var utils = require('../assets/utils.js').Utils;
 
 describe('connexa.io Check the Notification after an Event Post', function() {
-    it('should have the right title - the fancy generator way', function () {
+    it('the notification creator should receive the notification', function () {
         
         const eventName = 'TestEvent for Automated Tests';
         const post = 'Event Post '+ utils.randomNumber().value;

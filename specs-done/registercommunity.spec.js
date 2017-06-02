@@ -14,7 +14,7 @@ var utils = require('../assets/utils.js').Utils;
 const msTimeout = 30000;
 
 describe('connexa.io Register Community', function() {
-    it('should have the registered data - the fancy generator way', function () {
+    it('should register a new community and verify the initial data', function () {
       
         var randomNumber = utils.randomNumber().value;
         const email = 'testing' + randomNumber +'@connexa.io';

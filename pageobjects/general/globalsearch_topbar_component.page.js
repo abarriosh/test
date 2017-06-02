@@ -13,23 +13,18 @@ var GlobalSearchPage = Object.create(Page, {
      * define or overwrite page methods
      */
      
-    search: { value: function(criteria,access) {   
+    search: { value: function(criteria,access,hasMultipleURL) {   
            
-        
         this.globalSearch.waitForVisible(msTimeout);
         this.globalSearch.setValue(criteria);
-        
         
         browser.waitForText('='+criteria,msTimeout);
         var href = browser.getAttribute('='+criteria, 'href');
         
-        var caps = browser.session();
-        if (caps.value.browserName !== 'phantomjs')  //REAL BROWSER CREATES AN ARRAY ON HREF ATTRIBUTE. WE NEED TO SEARCH THE LAST ELEMENT OF THE ARRAY
-            href = href[href.length-1];    
-        
-        
-        console.log('href without substring: '+href);
-        
+        console.log('original href: '+href);
+        if( typeof href !== 'string' )
+            href = href[href.length-1];
+
         if (access === 'public'){
             href = href.substring(35);      //SUBSTRING IS TOTALLY DEPENDING OF THE PUBLIC DOMAIN
             Page.open.call(this, href);
@@ -38,7 +33,7 @@ var GlobalSearchPage = Object.create(Page, {
             Page.openPrivate.call(this,href);
         }
 
-        console.log(href);
+        console.log('Substring href: '+ href);
         
     } }, 
 

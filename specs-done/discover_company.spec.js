@@ -4,7 +4,7 @@ var LandingPage = require('../pageobjects/landing/landing.page');
 var DiscoverCompanyPage = require('../pageobjects/companies/discover_company.page');
 
 describe('connexa.io Check the Discover Companies', function() {
-    it('should have the right title - the fancy generator way', function () {
+    it('should verify Discover Company is working', function () {
         
         browser.setViewportSize({width: 1366,height: 657}); //Needed to Expand the viewport (For Headless Execution)
 

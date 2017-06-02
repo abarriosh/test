@@ -6,7 +6,7 @@ var EventSettingsPage = require('../pageobjects/events/event_settings.page');
 var utils = require('../assets/utils.js').Utils;
 
 describe('connexa.io Create Event page', function() {
-    it('should have the right title - the fancy generator way', function () {
+    it('should save and verify the event require fields', function () {
         
         var eventName = 'TestEvent' + utils.randomNumber().value;
         console.log(eventName);
