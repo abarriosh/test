@@ -12,7 +12,8 @@ var ProfileSettingsPage = Object.create(Page, {
     lastName: { get: function () { return browser.element('[name="last_name"]'); } },
     country: { get: function () { return browser.element('[name="country_code"]'); } },
     city: { get: function () { return browser.element('[name="city"]'); } },
-    settingsTab: { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[3]/div/div/div[1]/div/ul/li[4]/a'); } },
+    settingsTab: { get: function () { return browser.element('#profile-tab-setting'); } },
+    //settingsTab: { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[4]/div/div/div[1]/div/ul/li[4]/a'); } },
     countryNameSpan: { get: function () { return browser.element('#select2-country_code-container'); } },
     cityNameSpan: { get: function () { return browser.element('#select2-city-container'); } },
 

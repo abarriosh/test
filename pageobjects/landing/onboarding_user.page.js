@@ -15,7 +15,7 @@ var OnboardingUserPage = Object.create(Page, {
     //birthYear: { get: function () { return browser.element('[name="date_[year]"]'); } },   //Optional Field
     country:   { get: function () { return browser.element('#country'); } }, 
     city:      { get: function () { return browser.element('[name="city"]'); } }, 
-    continueButton:  { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[3]/div/div/div/div[1]/div[2]/div/form/div[3]/button'); } }, 
+    continueButton:  { get: function () { return browser.element('#js-start'); } }, 
     countryNameSpan: { get: function () { return browser.element('#select2-country-container'); } },
     cityNameSpan: { get: function () { return browser.element('#select2-city-container'); } },
 

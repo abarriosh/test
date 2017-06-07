@@ -11,18 +11,19 @@
 
 var assert = require('assert');
 var LandingPage = require('../pageobjects/landing/landing.page');
-var TaskActivityPage = require('../pageobjects/tasks/task_activity.page');
+var TaskDetailPage = require('../pageobjects/tasks/task_detail.page');
 var MenuTopBarPage = require('../pageobjects/general/menu_topbar_component.page');
 var NotificationsTopBarPage = require('../pageobjects/general/notifications_topbar_component.page');
-var GlobalSearchPage = require('../pageobjects/general/globalsearch_topbar_component.page');
+var SearchPage = require('../pageobjects/general/search_component.page');
+var DiscoverTaskPage = require('../pageobjects/tasks/discover_task.page');
 var utils = require('../assets/utils.js').Utils;
 
 describe('connexa.io Check the Notification after a Task Post', function() {
     it('the notification creator should receive the notification', function () {
         
         const taskName = 'TestTask for Automated Tests';
-        const post = 'Task Post '+ utils.randomNumber().value;
-        console.log(post);
+        const comment = 'Task Comment '+ utils.randomNumber().value;
+        console.log(comment);
 
         browser.setViewportSize({width: 1366,height: 657}); //Needed to Expand the viewport (For Headless Execution)
 
@@ -30,17 +31,18 @@ describe('connexa.io Check the Notification after a Task Post', function() {
        	LandingPage.open();
         LandingPage.login('abarriosh@gmail.com','hp692cie');
 
-        //Search the Event
-        GlobalSearchPage.search(taskName,'public'); // IT IS NOT IMPLEMENTED IN THE SYSTEM. SHOULD IMPLEMENT THE SEARCH IN DISCOVER TASK
-        
-        //Make an Event Post
-        TaskActivityPage.createPost(post);
-        TaskActivityPage.waitForPost(post)
+        //Search the Task in the Discover Filter
+        DiscoverTaskPage.open();
+        SearchPage.search(taskName);
+               
+        //Make a Task Post
+        TaskDetailPage.createComment(comment);
+        TaskDetailPage.waitForComment(comment)
         
         //LogOut the User that makes the post
         MenuTopBarPage.clickSignOutOption();
 
-        //Sign In the group's creator to see the notification
+        //Sign In the task's creator to see the notification
         LandingPage.open();
         LandingPage.login('andres@connexa.io','hp692cie');
 

@@ -13,14 +13,14 @@ var TaskDetailPage = Object.create(Page, {
     /**
      * define or overwrite page methods
      */
-    createPost: { value: function(post) {
+    createComment: { value: function(post) {
         
         PostPage.setPost(post);
         PostPage.submit();
                
     } },
 
-     waitForPost: { value: function(post) {
+     waitForComment: { value: function(post) {
 
         PostPage.waitPost(post);
         

@@ -6,14 +6,21 @@ var LandingPage = Object.create(Page, {
     /**
      * define elements
      */
-
+   
     email: { get: function () { return browser.element('[name="email"]'); } },
     password: { get: function () { return browser.element('[name="password"]'); } },
-    signInButton:     { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[3]/div/div/div/div/div/div/div[3]/div/div/form/button'); } },
-    registerEmail:  { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[3]/div/div/section[2]/div/div/div/div/div[2]/div/div/form/div[1]/input'); } },
-    registerPassword: { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[3]/div/div/section[2]/div/div/div/div/div[2]/div/div/form/div[2]/input'); } },
-    registerButton: { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[3]/div/div/section[2]/div/div/div/div/div[2]/div/div/form/button'); } },
-
+    signInButton:     { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[1]/div/div/div/div/div/div/div[3]/div/div/form/button'); } },
+    registerEmail:  { get: function () { return browser.element('#email-register'); } },
+    registerPassword: { get: function () { return browser.element('#password-register'); } },
+    registerButton: { get: function () { return browser.element('#register-user-btn'); } },
+  
+/*
+    signInButton:     { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[1]/div/div/div/div/div/div/div[3]/div/div/form/button'); } },
+    registerEmail:  { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[1]/div/div/section[2]/div/div/div/div/div[2]/div/div/form/div[1]/input'); } },
+    registerPassword: { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[1]/div/div/section[2]/div/div/div/div/div[2]/div/div/form/div[2]/input'); } },
+    registerButton: { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[1]/div/div/section[2]/div/div/div/div/div[2]/div/div/form/button'); } },
+*/
+   
     /**
      * define or overwrite page methods
      */

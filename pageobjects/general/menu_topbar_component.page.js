@@ -6,12 +6,17 @@ var MenuTopBarPage = Object.create(Page, {
     /**
      * define elements
      */
-     
-     settingsButton: { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[2]/div/div/div/nav/ul/li[3]/a'); } },
-     profileOption: { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[2]/div/div/div/nav/ul/li[3]/ul/li[1]/a'); } },
-     adminOption: { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[2]/div/div/div/nav/ul/li[3]/ul/li[4]/a'); } },
+     settingsButton: { get: function () { return browser.element('#top-bar-menu'); } },
+     profileOption: { get: function () { return browser.element('#top-bar-profile'); } },
+     adminOption: { get: function () { return browser.element('#top-bar-admin-section'); } },
      signOutOption: { get: function () { return browser.element('#js-signout'); } },
-     //signOutOptionNoAdmin: { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[2]/div/div/div/nav/ul/li[3]/ul/li[4]/a'); } }, 
+          
+     /*
+     settingsButton: { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[3]/div/div/div/nav/ul/li[3]/a'); } },
+     profileOption: { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[3]/div/div/div/nav/ul/li[3]/ul/li[1]/a'); } },
+     adminOption: { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[3]/div/div/div/nav/ul/li[3]/ul/li[4]/a'); } },
+     signOutOption: { get: function () { return browser.element('#js-signout'); } },
+     */
 
      /**
      * define or overwrite page methods

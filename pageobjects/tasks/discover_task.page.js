@@ -1,16 +1,15 @@
-// discover_company.js
+// discover_task.js
 var Page = require('../page');
 var GlobalSearchPage = require('../general/globalsearch_topbar_component.page');
 //var PostPage = require('../pageobjects/general/post_component.page');
 
 const msTimeout = 30000;
 
-var DiscoverCompanyPage = Object.create(Page, {
+var DiscoverTaskPage = Object.create(Page, {
     /**
      * define elements
      */
-      //title: { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[4]/div/div/div/div[1]/div/div/div[1]/h2'); } },  
-      title: { get: function () { return browser.element('#discover-company'); } },
+      title: { get: function () { return browser.element('discover-task'); } },  
 
     /**
      * define or overwrite page methods
@@ -18,7 +17,7 @@ var DiscoverCompanyPage = Object.create(Page, {
     open: { value: function() {
         
         GlobalSearchPage.waitForGlobalSearch(); //Using Global Searh Component to indicate logged in ...
-        Page.open.call(this, 'companies/discover');
+        Page.open.call(this, 'tasks/discover');
         
     } },
              
@@ -30,4 +29,4 @@ var DiscoverCompanyPage = Object.create(Page, {
 
 
 });
-module.exports = DiscoverCompanyPage
+module.exports = DiscoverTaskPage

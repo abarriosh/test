@@ -13,7 +13,7 @@ var GlobalSearchPage = Object.create(Page, {
      * define or overwrite page methods
      */
      
-    search: { value: function(criteria,access,hasMultipleURL) {   
+    search: { value: function(criteria,access) {   
            
         this.globalSearch.waitForVisible(msTimeout);
         this.globalSearch.setValue(criteria);

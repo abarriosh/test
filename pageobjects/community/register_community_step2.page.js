@@ -14,7 +14,8 @@ var RegisterCommunityStep2Page = Object.create(Page, {
     nextYearMembers: { get: function () { return browser.element('[name="account_potential_size"]'); } },
     communityName: { get: function () { return browser.element('[name="account_name"]'); } },
     communitySubdomain: { get: function () { return browser.element('[name="account_subdomain"]'); } },
-    continueButton: { get: function () { return browser.element('/html/body/div/div/div/div/div/div/div/div/div[1]/div[2]/div/form/div[2]/button'); } },
+    //continueButton: { get: function () { return browser.element('/html/body/div/div/div/div/div/div/div/div/div[1]/div[2]/div/form/div[2]/button'); } },
+    continueButton: { get: function () { return browser.element('#continue-register'); } },
     countryNameSpan: { get: function () { return browser.element('/html/body/div/div/div/div/div/div/div/div/div[1]/div[2]/div/form/div[1]/div/div[2]/div[2]/span[1]/span[1]/span/span[1]/span'); } },
     aboutNameSpan: { get: function () { return browser.element('#select2-account_about-container'); } },
 

@@ -13,12 +13,14 @@ var CreateEventPage = Object.create(Page, {
     startHour: { get: function () { return browser.element('[name="start_hour"]'); } },
     endDate: { get: function () { return browser.element('[name="end_date"]'); } },
     endHour: { get: function () { return browser.element('[name="end_hour"]'); } },
-    uploadCoverButton: { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[3]/div/div/div/div/div/div/div[3]/form/div[1]/div[2]/div/div[1]/a'); } },
+    //uploadCoverButton: { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[4]/div/div/div/div/div/div/div[3]/form/div[1]/div[2]/div/div[1]/a'); } },
+    uploadCoverButton: { get: function () { return browser.element('#js-cover-event-upload'); } },
     file: { get: function () { return browser.element('#fileuploader'); } },
-    croppingImage: { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[4]/div/div/div/div/div/div[2]/div[2]/div/img'); } },
+    croppingImage: { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[5]/div/div/div/div/div/div[2]/div[2]/div/img'); } },
+    //croppingImage: { get: function () { return browser.element('#image-target'); } },
     saveCoverButton: { get: function () { return browser.element('#submit'); } },
-    saveButton: { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[3]/div/div/div/div/div/div/div[3]/form/div[14]/button[2]'); } },
-
+    //saveButton: { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[4]/div/div/div/div/div/div/div[3]/form/div[14]/button[2]'); } },
+    saveButton: { get: function () { return browser.element('#save-event'); } },
     
      /* define or overwrite page methods*/
     open: { value: function() {

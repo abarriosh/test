@@ -14,7 +14,8 @@ var EventSettingsPage = Object.create(Page, {
     startHour: { get: function () { return browser.element('[name="start_hour"]'); } },
     endDate: { get: function () { return browser.element('[name="end_date"]'); } },
     endHour: { get: function () { return browser.element('[name="end_hour"]'); } },
-    settingsTab: { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[3]/div/div/div[1]/div/ul/li[6]/a'); } },
+    settingsTab: { get: function () { return browser.element('#setting-tab'); } },
+    //settingsTab: { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[4]/div/div/div[1]/div/ul/li[6]/a'); } },
     
     /**
      * define or overwrite page methods
