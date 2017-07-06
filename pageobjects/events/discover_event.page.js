@@ -14,8 +14,8 @@ var DiscoverEventPage = Object.create(Page, {
     pastLink: { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[4]/div/div/div/div[1]/div/div/div[1]/div/div[2]/a[2]'); } },
     firstBoxEvent: { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[4]/div/div/div/div[1]/div/div/div[2]/div/div[1]/div'); } }, //First box Event DIV Container
     */       
-    upcomingLink: { get: function () { return browser.element('discover-upcoming-link'); } },
-    pastLink: { get: function () { return browser.element('discover-past-link'); } },
+    upcomingLink: { get: function () { return browser.element('#discover-upcoming-link'); } },
+    pastLink: { get: function () { return browser.element('#discover-past-link'); } },
     firstBoxEvent: { get: function () { return browser.element('#box-event'); } }, //First box Event DIV Container
     
 

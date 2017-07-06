@@ -8,6 +8,8 @@ var GlobalSearchPage = Object.create(Page, {
      */
      
     globalSearch: { get: function () { return browser.element('[name="term"]'); } },
+    showAllResultsBox: { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[4]/div/div/div/div/div/div[1]'); } },
+    showAllResultsOption: { get: function () { return browser.element('#js-showResults'); } },   
 
     /**
      * define or overwrite page methods
@@ -41,7 +43,19 @@ var GlobalSearchPage = Object.create(Page, {
            
         this.globalSearch.waitForVisible(msTimeout);
                
-    } }   
+    } },  
+
+    isShowAllResultsDisplayed: { value: function(criteria) {   
+         
+        this.globalSearch.waitForVisible(msTimeout);
+        this.globalSearch.setValue(criteria);  
+        this.showAllResultsOption.waitForVisible(msTimeout);
+        this.showAllResultsOption.click();
+
+        this.showAllResultsBox.waitForVisible(msTimeout);
+        return true;
+               
+    } }  
           
 
 });

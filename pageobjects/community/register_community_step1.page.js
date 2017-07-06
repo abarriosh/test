@@ -9,7 +9,6 @@ var RegisterCommunityStep1Page = Object.create(Page, {
 
     email: { get: function () { return browser.element('[name="user_email"]'); } },
     password: { get: function () { return browser.element('[name="user_password"]'); } },
-    //startButton: { get: function () { return browser.element('/html/body/div/div/div/div/div/div/div/div/div[1]/div[2]/div/form/div[2]/button'); } },
     startButton: { get: function () { return browser.element('#start-register'); } },
 
     /**

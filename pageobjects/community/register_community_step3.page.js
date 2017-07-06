@@ -7,8 +7,7 @@ var RegisterCommunityStep3Page = Object.create(Page, {
      * define elements
      */
 
-    //settingUpButton: { get: function () { return browser.element('/html/body/div[1]/div/div/div/div/div/div/div/div[1]/div[2]/div[2]/form/div[6]/div/a[1]'); } },
-    settingUpButton: { get: function () { return browser.element('#setting_link'); } },
+    settingUpButton: { get: function () { return browser.element('#setting-link'); } },
 
     /**
      * define or overwrite page methods

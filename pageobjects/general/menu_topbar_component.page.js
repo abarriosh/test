@@ -11,13 +11,7 @@ var MenuTopBarPage = Object.create(Page, {
      adminOption: { get: function () { return browser.element('#top-bar-admin-section'); } },
      signOutOption: { get: function () { return browser.element('#js-signout'); } },
           
-     /*
-     settingsButton: { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[3]/div/div/div/nav/ul/li[3]/a'); } },
-     profileOption: { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[3]/div/div/div/nav/ul/li[3]/ul/li[1]/a'); } },
-     adminOption: { get: function () { return browser.element('/html/body/div[1]/div/div/div/div[3]/div/div/div/nav/ul/li[3]/ul/li[4]/a'); } },
-     signOutOption: { get: function () { return browser.element('#js-signout'); } },
-     */
-
+     
      /**
      * define or overwrite page methods
      */
